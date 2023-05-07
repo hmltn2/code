@@ -1,0 +1,197 @@
+"""
+Literate Programming Example: N-Grams
+
+This code demonstrates the process of generating and analyzing n-grams in a given text. It serves as a simple,
+pedagogical example for understanding basic natural language processing techniques.
+"""
+
+# Step 1: Load a sample text
+text = """
+Winnie the Pooh, also called Pooh Bear, is a fictional anthropomorphic teddy bear created by A. A. Milne.
+The first collection of stories about the character was the book Winnie-the-Pooh, and this was followed by The House at Pooh Corner.
+"""
+
+# Step 2: Tokenize the text on whitespace
+tokens = text.split()
+
+# Step 3: Define a function to generate n-grams
+def generate_ngrams(tokens, n):
+    """
+    Generates n-grams from the given list of tokens.
+    
+    Args:
+        tokens (list of str): The list of tokens.
+        n (int): The length of the n-grams to generate.
+
+    Returns:
+        list of str: The generated n-grams.
+    """
+    ngrams = zip(*[tokens[i:] for i in range(n)])
+    return [" ".join(ngram) for ngram in ngrams]
+
+# Step 4: Generate bigrams (n=2) and 5-grams (n=5)
+bigrams = generate_ngrams(tokens, 2)
+fivegrams = generate_ngrams(tokens, 5)
+
+# Step 5: Define a function to count n-gram occurrences
+def count_ngrams(ngrams):
+    """
+    Counts the occurrences of n-grams in the given list.
+    
+    Args:
+        ngrams (list of str): The list of n-grams.
+
+    Returns:
+        dict: A dictionary with n-grams as keys and their counts as values.
+    """
+    ngram_counts = {}
+    for ngram in ngrams:
+        if ngram not in ngram_counts:
+            ngram_counts[ngram] = 1
+        else:
+            ngram_counts[ngram] += 1
+
+    return ngram_counts
+
+# Step 6: Count bigram and 5-gram occurrences
+bigram_counts = count_ngrams(bigrams)
+fivegram_counts = count_ngrams(fivegrams)
+
+# Step 7: Define a function to display the top n-grams
+def display_top_ngrams(ngram_counts, n):
+    """
+    Displays the top n n-grams by frequency.
+    
+    Args:
+        ngram_counts (dict): A dictionary with n-grams as keys and their counts as values.
+        n (int): The number of top n-grams to display.
+    """
+    sorted_ngrams = sorted(ngram_counts.items(), key=lambda x: x[1], reverse=True)
+
+    for ngram, count in sorted_ngrams[:n]:
+        print(f"{ngram}: {count}")
+
+# Step 8: Display the top bigrams and 5-grams
+print("Top bigrams:")
+display_top_ngrams(bigram_counts, 10)
+
+print("\nTop 5-grams:")
+display_top_ngrams(fivegram_counts, 10)
+
+
+
+"""
+Continuation: Set Intersections and Topology in N-Grams
+
+This section of the code introduces the concept of set intersections and their connection to topology. By examining the
+intersections of the generated 5-grams, we can identify and rank salient n-grams (2, 3, and 4-grams) that are subsets
+of the 5-grams.
+"""
+
+# Step 9: Define a function to find the set intersections of n-grams
+def find_ngram_intersections(ngrams, min_n, max_n):
+    """
+    Finds the set intersections of n-grams, identifying smaller n-grams that are subsets of the input n-grams.
+    
+    Args:
+        ngrams (list of str): The list of n-grams to analyze.
+        min_n (int): The minimum length of the n-grams to generate from the intersections.
+        max_n (int): The maximum length of the n-grams to generate from the intersections.
+
+    Returns:
+        dict: A dictionary with n-grams as keys and their counts as values.
+    """
+    intersections = {}
+
+    for ngram in ngrams:
+        tokens = ngram.split()
+
+        for n in range(min_n, max_n + 1):
+            sub_ngrams = generate_ngrams(tokens, n)
+
+            for sub_ngram in sub_ngrams:
+                if sub_ngram not in intersections:
+                    intersections[sub_ngram] = 1
+                else:
+                    intersections[sub_ngram] += 1
+
+    return intersections
+
+# Step 10: Find intersections of the 5-grams (generating 2, 3, and 4-grams)
+ngram_intersections = find_ngram_intersections(fivegrams, 2, 4)
+
+# Step 11: Display the top n-grams from the intersections
+print("Top n-grams from intersections:")
+display_top_ngrams(ngram_intersections, 10)
+
+"""
+Topology and Linguistics
+
+Topology is the study of properties that are preserved under continuous deformations, such as stretching and bending.
+In the context of computational linguistics, topology can be related to the analysis of n-grams and the relationships
+between different n-grams when considering set intersections and unions.
+
+In this code, we find the set intersections of 5-grams to identify smaller n-grams (2, 3, and 4-grams) that are subsets
+of the 5-grams. This approach highlights the presence of salient n-grams in the text, revealing patterns and structure
+in the language. By considering the intersections and unions of n-grams, we explore the underlying topological
+properties of the text, which can be valuable in a wide range of natural language processing tasks.
+
+Expected Output:
+
+The output frequency tables will show the top n-grams found in the input text, with a focus on salient n-grams
+identified through set intersections. These n-grams are likely to be related to the most relevant or frequent
+concepts in the text. The output should display ranked n-grams, along with their frequency counts, for bigrams,
+5-grams, and the n-grams derived from set intersections.
+"""
+
+# Step 12: Output a sample table to illustrate the expected results
+
+"""
+Sample Output Frequency Tables:
+
+These tables provide an example of what the output frequency tables might look like. They are not accurate and are
+provided for illustration purposes only.
+
+Top 10 Bigrams:
+1. ('the', 'hundred') - 4
+2. ('hundred', 'acre') - 4
+3. ('acre', 'wood') - 4
+4. ('winnie', 'the') - 3
+5. ('the', 'pooh') - 3
+6. ('and', 'piglet') - 3
+7. ('rabbit', 'house') - 2
+8. ('tigger', 'bounce') - 2
+9. ('eeyore', 'tail') - 2
+10. ('owl', 'wisdom') - 1
+
+Top 10 5-Grams:
+1. ('winnie the pooh and piglet') - 2
+2. ('the hundred acre wood story') - 2
+3. ('rabbit house and eeyore tail') - 1
+4. ('tigger bounce and owl wisdom') - 1
+5. ('a walk in the hundred') - 1
+6. ('pooh and piglet visit rabbit') - 1
+7. ('hundred acre wood with friends') - 1
+8. ('the adventures of winnie the') - 1
+9. ('eeyore loses his tail again') - 1
+10. ('owl shares wisdom with pooh') - 1
+
+Top 10 n-Grams from Intersections:
+1. ('the hundred acre') - 8
+2. ('winnie the pooh') - 6
+3. ('and piglet') - 4
+4. ('rabbit house') - 4
+5. ('tigger bounce') - 4
+6. ('eeyore tail') - 4
+7. ('owl wisdom') - 2
+8. ('hundred acre wood') - 2
+9. ('the hundred') - 2
+10. ('pooh and piglet') - 2
+"""
+
+
+
+
+
+
+
