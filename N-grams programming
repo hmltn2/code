@@ -192,6 +192,89 @@ Top 10 n-Grams from Intersections:
 
 
 
+# Final Addenda:
+#
+# 1. What is often called machine learning is a subset of a way more general, and simple, idea.
+#    It is actually basically functional analysis, because it is about transformations on functions.
+#    The real question, when you try to apply it, is, when you want something to “learn” something,
+#    you are arguably (most abstractly) wanting nothing more than a transformation. Sometimes you know
+#    the exact output desired, for the transformation. Sometimes you only have a criteria you want it
+#    to fulfill; you don’t know what the object looks like that fulfills it; you do not even know if
+#    it exists (mathematicians often work on questions of the existence or non existence of a particular
+#    object). The idea of being inside a set where a particular transformation may produce some other
+#    object (presumably of the same fundamental kind, and hence, likely in the same set) brings us
+#    immediately into abstract algebra, and also category theory. When we say “learning”, we really just
+#    want to know if there’s a “path” - in algebraic terms I suppose like, a homology or something,
+#    an existing sequence of functions to get you there? “Path” sounds like point set topology - but I
+#    believe they are related, anyhow! - to get from a to b (where b is a set of criteria - either only
+#    few, or so strong to determine some object up to uniqueness, but it’s actually no longer the
+#    important part, the more and more abstract we become —..).
+#
+# 2. What that means is arguably that we can start from a clean start, fresh slate, to not dive straight
+#    into neural networks. Instead, it is better to consider any real world phenomenon - a mystifying
+#    social trend which you want to know if its a pattern - music - language - you want to know if some
+#    “object” under some transformation could ever take on / mirror the form of that pattern (ie, to
+#    understand language must mean in a way to have the actual parsing algorithms of language encoded
+#    into you, somehow, somewhere). Again, the idea of emulating a pattern is no longer distinctive or
+#    the point. It might be a mere criteria, not full capable learning (even modern ML does not fully
+#    learn things, LLMs do not fully understand language, haven’t mastered it like a human). Now we only
+#    want to know if a system has a valid sequence of transformations to arrive at a different state.
+#    This is actually like Lagrangian mechanics where we can calculate a number of the possible physical
+#    states a system can be in to kind of calculate its overall entropy / energy / information density,
+#    and compute how like it is to spontaneously become some other form or state, become something else.)
+#    ULTIMATELY we come full circle back to trying to make algorithms that can copy language patterns,
+#    any at all… starting at the beginning.. the simplest pattern could be a “dumb” algorithm who, the
+#    first word it is given, remembers the second, and that’s it. It only has been modified to say a
+#    word, after a particular word to trigger it. Go forward from there. Start with very very simple
+#    algorithms. Try doing n-grams on SYMBOLS - see what you find. Try doing n-grams MULTI-SCALE -
+#    averaged over all context windows. Go from there.
+#
+# 3. The real (
+#    hard, interesting, broad) purpose of this was to try to find multi word expressions, words or
+#    phrases that are unique and determining, not just common. Evaluate if our n gram method was good
+#    at that. If not, how could we change it? The intersection of all the n grams finds us a word that
+#    is not only common but highly distributed. But that’s not quite the same… I think we can use
+#    simple n gram techniques, basic discrete groupings, to learn so much… what we want to see is if
+#    there’s a word that’s kind of *consistent* about who it hangs out with - like, a word that is not
+#    distributed at all, but focalized on only a few words. That could imply it determines them. It’s
+#    conditional logic: GIVEN A, B has a very high probability! So the final calculation is simple!
+#    Calculate the conditional probability of every word relative to a 2 gram or all n grams! Now sum up
+#    which word had the highest total of conditional probabilities - that is a word that, when it comes
+#    knocking, you know it has brought a LOT on its tail. It implies the most.
+#
+
+#    The main purpose of this exploration was to find multi-word expressions or phrases that are
+#    unique and determining, not just common. Evaluate if our n-gram method was effective in this
+#    regard. If not, how could we improve it? The intersection of all the n-grams finds us a word that
+#    is not only common but also highly distributed. But that’s not quite the same… We can use
+#    simple n-gram techniques, basic discrete groupings, to learn a great deal. What we want to identify
+#    is if there’s a word that is *consistent* about which words it co-occurs with - like, a word that is not
+#    distributed at all, but focalized on only a few words. That could imply it determines them. It's
+#    related to conditional probability: GIVEN A, B has a very high probability! So, the final calculation
+#    is simple! Calculate the conditional probability of every word relative to a 2-gram or all n-grams! Now sum up
+#    which word had the highest total of conditional probabilities - that is a word that, when it appears,
+#    you know it has brought a LOT in its context. It implies the most.
+#
+#    This idea is related to the field of distributional semantics, which posits that words with similar
+#    meanings tend to occur in similar contexts. By examining the distribution of words and their co-occurrence
+#    patterns, we can identify relationships between them and better understand the underlying structure
+#    of the text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
