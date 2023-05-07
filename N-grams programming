@@ -262,6 +262,42 @@ Top 10 n-Grams from Intersections:
 
 
 
+Suggested Readings:
+
+1. Jurafsky, D., & Martin, J. H. (2019). Speech and Language Processing (3rd Edition). Prentice Hall.
+
+2. Manning, C. D., & Schütze, H. (1999). Foundations of Statistical Natural Language Processing. MIT Press.
+
+3. Hatcher, A. (2002). Algebraic Topology. Cambridge University Press.
+
+4. Awodey, S. (2010). Category Theory (2nd Edition). Oxford University Press.
+
+5. Bishop, C. M. (2006). Pattern Recognition and Machine Learning. Springer.
+
+'''
+
+Firth, J. R. (1957). "A Synopsis of Linguistic Theory 1930-1955." Studies in Linguistic Analysis, pp. 1-32.
+This influential work by J.R. Firth discusses the distributional hypothesis, which posits that words that occur in the same contexts tend to have similar meanings. It serves as a foundation for much of the work in distributional semantics and co-occurrence analysis.
+
+
+
+# Other Suggested Readings:
+# 1. Jurafsky, D., & Martin, J. H. (2019). Speech and Language Processing (3rd ed.). https://web.stanford.edu/~jurafsky/slp3/
+# 2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). Introduction to Information Retrieval. Cambridge University Press.
+# 3. Harris, Z. S. (1954). Distributional structure. Word, 10(2-3), 146-162.
+# 4. Turney, P. D., & Pantel, P. (2010). From frequency to meaning: Vector space models of semantics. Journal of Artificial Intelligence Research, 37, 141-188.
+# 5. Baroni, M., Dinu, G., & Kruszewski, G. (2014). Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors. In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), 238-247.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
