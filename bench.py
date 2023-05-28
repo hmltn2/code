@@ -116,3 +116,31 @@ class LLM_Benchmarker:
         # For the sake of this example, we'll just return a list of the same prompt repeated.
         return [prompt] * self.multiplicity
 """
+                                   
+                    _prompts_list_with_absolute_value_chunking(prompts, chunk_length))
+        elif divisor:
+            chunked_prompts = list(self.average_large_prompts_list_with_ratio_chunking(prompts, divisor))
+        else:
+            chunked_prompts = prompts
+
+        if recursion_layers and recursion_layers > 0:
+            return self.average_prompts_with_recursion(chunked_prompts, chunk_length, divisor, recursion_layers-1)
+        else:
+            return chunked_prompts[0]
+
+    def multi_prompt_with_consistency(self, prompt):
+        """
+        Run the same prompt on an LLM N times and store all of the output calls.
+
+        Args:
+            prompt (str): The prompt to run on the LLM.
+
+        Returns:
+            list: The outputs from the LLM.
+        """
+        # For the sake of this example, we'll just return a list of the same prompt repeated.
+        return [prompt] * self.multiplicity
+                       
+                                   
+                                   
+                                   
