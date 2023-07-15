@@ -26,3 +26,13 @@ Please note that the information might have changed after my last update in Sept
 2. **Define `activate` function**: Called when extension is activated.
 3. **`registerCommand`**: Defines a new command.
 4. Other key API elements: `vscode.window.showInformationMessage`, `vscode.workspace`, `vscode.TextEditor`, `vscode.commands.executeCommand`.
+
+
+
+https://code.visualstudio.com/docs/editor/tasks
+https://code.visualstudio.com/api/references/vscode-api
+https://code.visualstudio.com/docs/editor/accessibility
+https://code.visualstudio.com/api/references/when-clause-contexts
+https://code.visualstudio.com/api/extension-guides/webview
+
+https://app.cognosys.ai/s/kwNycoS
