@@ -36,3 +36,5 @@ https://code.visualstudio.com/api/references/when-clause-contexts
 https://code.visualstudio.com/api/extension-guides/webview
 
 https://app.cognosys.ai/s/kwNycoS
+
+https://medium.com/js-dojo/how-i-built-a-vscode-repl-and-how-you-can-use-it-in-a-vue-js-project-31acfd5e0227
